@@ -51,7 +51,7 @@ const Navbar = (props) => {
             <Route path='/' component={Home} exact />
             <Route path='/login' exact><Login popUp={popUp} handlePopUp={handlePopUp} setAuth={setAuth} /></Route>
             <Route path='/students' exact><StudentContainer/></Route>
-            <Route path='/course' exact><CourseContainer/></Route>
+            <Route path='/courses' exact><CourseContainer/></Route>
             <Route path='/students/:_id' exact><StudentShow/></Route>
             <Route path='/courses/:_id' exact><CourseShow/></Route>
         </div>

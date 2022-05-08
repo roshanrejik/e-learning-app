@@ -43,6 +43,24 @@ export const startAddCourse=(formData,redirect)=>{
             type:'REMOVECOURSE',payload:_id
         }
     }
+    export const startAddStudentToCourse=(courseId,studentId, redirect)=>{
+        console.log(courseId,studentId);
+        return (dispatch)=>{
+            axios.patch(`https://dct-e-learning-app.herokuapp.com/api/courses/enroll?courseId=${courseId}&studentId=${studentId}`,{
+                headers:{ Authorization : `${localStorage.getItem('token')}`}
+             })
+        .then(res=>{
+            if(!res.data.hasOwnProperty('errors')){
+                console.log(res.data);
+              // dispatch(removeCourse(res.data._id))
+            }
+            else{
+              alert(res.data.errors)
+            }
+          })
+          .catch(err=>alert(err.message))  
+        } 
+    }
     export const startgetALLCourseInfo=()=>{
         return (dispatch)=>{
             axios.get('https://dct-e-learning-app.herokuapp.com/api/courses',{

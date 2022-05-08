@@ -65,7 +65,7 @@ const Header = (props) => {
               <MenuItem active={true} icon={<FiHome />}>
                 <Link to='/'>Home</Link>
               </MenuItem>
-              <MenuItem icon={<FaList />}><Link to='/course'>Course</Link></MenuItem>
+              <MenuItem icon={<FaList />}><Link to='/courses'>Course</Link></MenuItem>
               <MenuItem icon={<FaRegHeart />}><Link to='/students'>Students</Link></MenuItem>
               <MenuItem icon={<RiPencilLine />}><Link to='/lecture'>Lecture</Link></MenuItem>
               <MenuItem icon={<BiCog />}><Link to='/account'>Account</Link></MenuItem>
