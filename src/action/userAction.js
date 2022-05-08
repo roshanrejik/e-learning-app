@@ -1,5 +1,6 @@
 import axios from "axios";
 import {startgetALLStudentInfo}from './studentAction'
+import { startgetALLCourseInfo } from "./courseAction";
 export const userLogin=(formData,userType,redirect,setAuth)=>{
     return (dispatch)=>{
         if(userType=='admin'){
@@ -43,6 +44,7 @@ export const startgetAdminInfo=()=>{
         if(!res.data.hasOwnProperty('errors')){
             dispatch(addUserInfo(res.data))
             dispatch(startgetALLStudentInfo())
+            dispatch(startgetALLCourseInfo())
         }
         else{
           alert(res.data.errors)

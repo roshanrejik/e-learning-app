@@ -6,7 +6,7 @@ export const startgetALLStudentInfo=()=>{
          })
     .then(res=>{
         if(!res.data.hasOwnProperty('errors')){
-            dispatch(addStudentInfo(res.data))
+            dispatch(allStudentInfo(res.data))
         }
         else{
           alert(res.data.errors)
@@ -15,7 +15,7 @@ export const startgetALLStudentInfo=()=>{
       .catch(err=>alert(err.message))  
     } 
 }
-export const  addStudentInfo=(studentArr)=>{
+export const  allStudentInfo=(studentArr)=>{
     return {
         type:'ALLSTUDENTINFO',payload:studentArr
     }
